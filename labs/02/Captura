@@ -1,41 +1,23 @@
-class Operacio {   
-public static double[][] suma(double[][] matA, double[][] matB) {
-    int filas = matA.length;
-    int cols = matA[0].length;
-    double[][] matR = new double[filas][cols];
+import java.util.Scanner;
+
+class Captura {
+  private static  Scanner leer = new Scanner(System.in);
+
+  public static double nextDouble(String message) {
+    System.out.print(message);
+    return leer.nextDouble();
+  }
+
+  public static int[][] readMat(int filas, int cols) {
+    int[][] matR = new int[filas][cols];
 
     for (int i = 0; i < filas; i++) {
       for (int j = 0; j < cols; j++) {
-        matR[i][j] = matA[i][j] + matB[i][j];
+        System.out.print("Ingrese el valor en la posición [" + i + "][" + j + "]: ");
+        matR[i][j] = leer.nextInt();
       }
     }
 
     return matR;
   }
-
-  public static double[][] producto(double[][] matA, double[][] matB) {
-    int filasA = matA.length;
-    int colsA = matA[0].length;
-    int filasB = matB.length;
-    int colsB = matB[0].length;
-
-    if (colsA != filasB) {
-      System.out.println("No se pueden multiplicar las matrices. El número de columnas de A debe ser igual al número de filas de B.");
-      return null;
-    }
-
-    double[][] matR = new double[filasA][colsB];
-
-    for (int i = 0; i < filasA; i++) {
-      for (int j = 0; j < colsB; j++) {
-        double sum = 0.0;
-        for (int k = 0; k < colsA; k++) {
-          sum += matA[i][k] * matB[k][j];
-        }
-        matR[i][j] = sum;
-      }
-    }
-
-    return matR;
-  }
-  }
+}
