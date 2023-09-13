@@ -1,23 +1,31 @@
 import java.util.Scanner;
 
-class Captura {
-  private static  Scanner leer = new Scanner(System.in);
+class Captura {  
+  private static Scanner leer = new Scanner(System.in);
 
   public static double nextDouble(String message) {
     System.out.print(message);
     return leer.nextDouble();
   }
 
-  public static int[][] readMat(int filas, int cols) {
-    int[][] matR = new int[filas][cols];
+  public static int nextInt(String message) {
+    System.out.print(message);
+    return leer.nextInt();
+  }
 
-    for (int i = 0; i < filas; i++) {
-      for (int j = 0; j < cols; j++) {
-        System.out.print("Ingrese el valor en la posición [" + i + "][" + j + "]: ");
-        matR[i][j] = leer.nextInt();
-      }
-    }
+  public static double [][] readMat(int filas, int cols) {
+    double [][] matR = new double[filas][cols];
 
+    for (int i = 0; i < filas; i++)
+      for (int j = 0; j < cols; j++)
+        matR[i][j] = nextDouble("Elem(" + i + "," + j + "): ");
     return matR;
+  }
+
+  
+  
+  public static double [][] readMat(int filas, int cols, String mss) {
+    System.out.print(mss);
+    return readMat(filas, cols);
   }
 }
