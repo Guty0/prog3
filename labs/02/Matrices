@@ -1,34 +1,49 @@
 import java.util.Scanner;
-
 class Matrices {
-
   public static void main(String args[]) {
-     Operacio metodox = new Operacio();
       Scanner sn = new Scanner(System.in);
       boolean salir = false;
-      int opcion;
-
+      int op;
       while(!salir) {
-
-              System.out.println("\t CALCULADORA\n\n1. Suma\n2. Producto\n3. Producto por un escalar\n4. Transpuesta\n");
-              opcion = sn.nextInt();
-              
-              switch(opcion){
-                  case 1:
-                  
-                      break;
+              System.out.println("\t CALCULADORA\n\n1. Suma\n2. Producto\n3. Producto por un escalar\n4. Transpuesta\nSalir.\n");
+              op = sn.nextInt();
+               op = Captura.nextInt("\n\n  Su opcion [1-4]: ");
+        if (op == 5) break;
+        int f = Captura.nextInt("\n# filas:");
+        int c = Captura.nextInt("# columnas:");
+              switch(op){
+                  case 1:                  
+      double mat1[][] = Captura.readMat(f, c, "\nPRIMERA MATRIZ\n");
+      double mat2[][] = Captura.readMat(f, c, "\nSEGUNDA MATRIZ\n");
+      Salida.printMat(Operacion.suma(mat1, mat2), "\nMATRIZ SUMA\n"); break;
                   case 2:
-                      
-                      break;
+      double mat3[][] = Captura.readMat(f, c, "\nPRIMERA MATRIZ\n");
+      int c2 = Captura.nextInt("\n# columnas 2a. matriz: ");
+      double mat4[][] = Captura.readMat(c, c2, "\nSEGUNDA MATRIZ\n");
+      Salida.printMat(Operacion.producto(mat3, mat4), "\nMATRIZ PRODUCTO\n"); break;
                   case 3:
-                      
-                      break;
+      double mat5[][] = Captura.readMat(f, c, "\nMATRIZ\n");
+      double esc = Captura.nextDouble("Ingrese el escalar: ");
+      Salida.printMat(Operacion.escalar(mat5,esc ), "\nMATRIZ PRODUCTO POR UN ESCALAR\n"); break; 
                   case 4:
-                      
-                      break;
+      double mat6[][] = Captura.readMat(f, c, "\nPRIMERA MATRIZ\n");
+      Salida.printMat(Operacion.traspuesta(mat6 ), "\nMATRIZ SUMA\n"); break; 
                   default:
                       System.out.println("Seleccionar opciones del 1-4");
               }
       }
   }
+  public class Salida {
+  public static void printMat(double mat[][]) {
+    for (int i = 0; i < mat.length; i++) {
+      for (int j = 0; j < mat[0].length; j++)
+        System.out.printf("%6.2f", mat[i][j]);
+      System.out.println();
+    }
+  }
+  public static void printMat(double mat[][], String head) {
+    System.out.print(head);
+    printMat(mat);
+  }
+}
 }
