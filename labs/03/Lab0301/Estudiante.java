@@ -1,8 +1,8 @@
 public class Estudiante {
-    private String codigo;
-    private String nombre;
-    private String correo;
-    private int semestre;
+     private String codigo;;
+     private String nombre;
+     private String correo;
+     private int semestre;
 
     public Estudiante(String codigo, String nombre, String correo, int semestre) {
         this.codigo = codigo;
@@ -42,6 +42,4 @@ public class Estudiante {
     public void setSemestre(int semestre) {
         this.semestre = semestre;
     }
-    
-    
 }
