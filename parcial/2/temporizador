@@ -1,10 +1,14 @@
 import java.util.TimerTask;
+import java.util.concurrent.CountDownLatch;
 public class Temporizador extends TimerTask {
-    private String mensaje;
-    public Temporizador(String mensaje) {
+    private final String mensaje;
+    private final CountDownLatch latch;
+    public Temporizador(String mensaje, CountDownLatch latch) {
         this.mensaje = mensaje;
+        this.latch = latch;
     }
     public void run() {
         System.out.println(mensaje);
+        latch.countDown();
     }
 }
