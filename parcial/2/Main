@@ -18,3 +18,11 @@ public class Main {
                 timer.schedule(tarea, tiempoSegundos * 1000); 
                 System.out.println("Temporizador programado para " + tiempoSegundos + " segundos.");
             }
+                try {
+                Thread.sleep(1000); 
+            } catch (InterruptedException e) {
+            }
+            timer.cancel(); 
+        }
+    }
+}
