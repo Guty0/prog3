@@ -1,6 +1,6 @@
 import java.util.Timer;
 import java.util.Scanner;
 import java.util.concurrent.CountDownLatch;
-public class Main {
+public class Main {                              //Jaider Gonzales y Daniel Gutierrez 
     public static void main(String[] args) {
         Timer timer = new Timer();
