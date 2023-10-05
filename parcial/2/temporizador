@@ -1,6 +1,6 @@
 import java.util.TimerTask;
 import java.util.concurrent.CountDownLatch;
-public class Temporizador extends TimerTask {
+public class Temporizador extends TimerTask {                            //Jaider Gonzales y Daniel Gutierrez
     private final String mensaje;
     private final CountDownLatch latch;
     public Temporizador(String mensaje, CountDownLatch latch) {
