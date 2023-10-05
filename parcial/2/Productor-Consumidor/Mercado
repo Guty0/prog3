@@ -1,1 +1,11 @@
+import java.util.LinkedList;
+import java.util.Queue;
 
+class Mercado {
+    private Queue<Integer> buffer;
+    private int capacidad;
+
+    public Mercado(int capacidad) {
+        this.capacidad = capacidad;
+        this.buffer = new LinkedList<>();
+    }
