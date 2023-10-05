@@ -10,3 +10,11 @@ public class Main {
                 if (tiempoSegundos == 0) {
                     break;
                 }  
+                System.out.println("Ingrese un mensaje para el temporizador: ");
+                scanner.nextLine();
+                String mensaje = scanner.nextLine();
+                
+                Temporizador tarea = new Temporizador(mensaje, timer, tiempoSegundos);
+                timer.schedule(tarea, tiempoSegundos * 1000); 
+                System.out.println("Temporizador programado para " + tiempoSegundos + " segundos.");
+            }
